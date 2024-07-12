@@ -27,7 +27,7 @@ body {
     align-items: center;
     font-size: 2em;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #fff;
 }
 
@@ -53,4 +53,16 @@ body {
 
 .box:hover {
     background-color: #e0e0e0;
+}
+
+#X {
+    display: none;
+}
+
+#O {
+    display: none;
+}
+
+#tie {
+    display: none;
 }
