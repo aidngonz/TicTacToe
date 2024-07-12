@@ -71,6 +71,7 @@ const checkWin = (board, player) => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const boxes = document.querySelectorAll('.box');
+    const gameOverDiv = document.querySelector("#gameOver");
 
     let currentPlayer = player1;
 
@@ -83,10 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
             event.target.style.backgroundColor = currentPlayer === player1 ? "blue" : "red";
             if (checkWin(gameBoard, currentPlayer)) {
                 let win = `${currentPlayer.name} wins!!`;
+                const winner = document.createElement("h1");
+                winner.classList.add("winner");
+                winner.setAttribute("style", "color: blue; background-color: #f0f0f0; padding: 120px; font-size: 70px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0;");
+                winner.textContent = win;
+                gameOverDiv.appendChild(winner);
                 console.log(win);
                 gameOver = true;
             } else if (gameBoard.flat().every(cell => cell !== '-')) {
                 let tie = "It's a tie!";
+                const tied = document.createElement("h1");
+                tied.classList.add("tied");
+                tied.setAttribute("style", "color: blue; background-color: #f0f0f0; padding: 120px; font-size: 70px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0;");
+                tied.textContent = tie;
+                gameOverDiv.appendChild(tied);
                 console.log(tie);
                 gameOver = true;
             }
