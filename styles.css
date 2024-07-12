@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row1, .row2, .row3 {
+    display: flex;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: #fff;
+    color: #fff;
+}
+
+.row1 .box {
+    border-top: none;
+}
+
+.row3 .box {
+    border-bottom: none;
+}
+
+.row1 .box:first-child,
+.row2 .box:first-child,
+.row3 .box:first-child {
+    border-left: none;
+}
+
+.row1 .box:last-child,
+.row2 .box:last-child,
+.row3 .box:last-child {
+    border-right: none;
+}
+
+.box:hover {
+    background-color: #e0e0e0;
+}
